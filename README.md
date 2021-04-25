@@ -1,8 +1,11 @@
 # Team Finder Mono Repo
 
 start the server & client by running this
+
 ```
- npm run start:dev  
+
+lerna bootsteap --hoist
+ npm run start:dev
 ```
 
 Frontend App will be at http://localhost:5000
