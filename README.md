@@ -1,8 +1,7 @@
 
 <p style = 'width:200px' align = "center">
  
-![image](https://user-images.githubusercontent.com/58369706/116579003-f6fed000-a8df-11eb-8ce0-94b69a2d2ec7.png)
-
+https://ibb.co/vvYkJTH
 
 </p>
 # Team Finder  Repo
