@@ -11,8 +11,8 @@
 </p>
 <hr>
 
-<p align="center">
-  How to run locally ✅ 
+<p >
+ Run locally 🏃  
 </p>
 <p align="center">
  
