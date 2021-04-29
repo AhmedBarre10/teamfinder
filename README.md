@@ -9,8 +9,6 @@
 <p align="center">
   <strong>A Platform that connects NBA2K talent 🏀 </strong>
 </p>
-
-<br>
 <hr>
 
 <p align="center">
