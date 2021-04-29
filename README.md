@@ -17,7 +17,8 @@
    Getting Started ✅ 
 </p>
 <p align="center">
-lerna bootstrap --hoist npm run start:dev
+lerna bootstrap --hoist
+ npm run start:dev
 </p>
 
 
