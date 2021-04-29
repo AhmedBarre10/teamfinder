@@ -11,10 +11,10 @@
 </p>
 <hr>
 
-<p >
- Run locally 🏃  
-</p>
 <p align="center">
+ 
+  Run locally 🏃  
+
  
 ```js
 lerna bootstrap --hoist
