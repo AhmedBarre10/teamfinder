@@ -1,10 +1,20 @@
 {
-  "name": "root",
-  "private": true,
-  "scripts": {
-    "start:dev": "lerna run start:dev"
-  },
-  "devDependencies": {
-    "lerna": "^4.0.0"
-  }
+    "name": "root",
+    "private": true,
+    "scripts": {
+        "start:dev": "lerna run start:dev",
+        "test":"echo"
+
+    },
+    "devDependencies": {
+        "@nestjs/common": "^7.6.15",
+        "@nestjs/core": "^7.6.15",
+        "@nestjs/mongoose": "^7.2.4",
+        "lerna": "^4.0.0"
+    },
+    "dependencies": {
+        "mongoose": "^5.12.5",
+        "reflect-metadata": "^0.1.13",
+        "rxjs": "^6.6.7"
+    }
 }
