@@ -1,5 +1,5 @@
 
-<p align = "center">
+<p style = 'width:200px' align = "center">
  
 ![image](https://user-images.githubusercontent.com/58369706/116577691-b488c380-a8de-11eb-9269-6df9616475e5.png)
 
