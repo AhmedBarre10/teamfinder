@@ -1,10 +1,7 @@
 
 <p align = "center">
  
-![image](https://user-images.githubusercontent.com/58369706/116574066-5e665100-a8db-11eb-941f-6c9642492499.png)
-
-  <g id="Group_4" data-name="Group 4" transform="translate(-833 -1358)">
-
+![image](https://user-images.githubusercontent.com/58369706/116577691-b488c380-a8de-11eb-9269-6df9616475e5.png)
 
 
 </p>
