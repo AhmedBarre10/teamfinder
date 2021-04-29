@@ -7,16 +7,14 @@
 <p align="center">
   <strong>A Platform that connects NBA2K talent 🏀 </strong>
 </p>
-<p align = 'center'>
+<p style = "background-color:darkgrey" align = 'center'>
 
-<p align = 'center'>
 
-```
+
  Getting Started ✅ 
  
 lerna bootstrap --hoist
  npm run start:dev
- ```
+ 
  </p>
-  </p>
 
