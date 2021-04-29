@@ -18,6 +18,7 @@
 </p>
 <p align="center">
 lerna bootstrap --hoist
+ <br>
  npm run start:dev
 </p>
 
