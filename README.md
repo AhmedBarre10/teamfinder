@@ -9,9 +9,11 @@
 </p>
 
 <p align = 'center'>
+
+```
  Getting Started ✅ 
  
 lerna bootstrap --hoist
  npm run start:dev
-```
-</p>
+ ```
+ </p>
