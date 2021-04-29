@@ -1,7 +1,7 @@
 
-<p style = 'width:200px' align = "center">
+<p style = 'width = 200px' align = "center">
  
-<img src = "https://i.ibb.co/rfsHZzm/Group-4.png"/>
+<img  src = "https://i.ibb.co/rfsHZzm/Group-4.png"/>
 </p>
 # Team Finder  Repo
 
