@@ -11,7 +11,7 @@
 </p>
 
 <br>
-<H4>
+<hr>
 
 <p align="center">
    Getting Started ✅ 
