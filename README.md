@@ -1,5 +1,5 @@
 
-<img src = "https://i.ibb.co/ZHcPK3Q/Logo.png" />
+<img style='width:200px; height:200px' src = "https://i.ibb.co/ZHcPK3Q/Logo.png" />
 
 # Team Finder  Repo
 
