@@ -13,10 +13,10 @@
 
 <p align="center">
  
-  Run locally 🏃  
 
  
 ```js
+  Run locally 🏃  
 lerna bootstrap --hoist
 npm run start:dev
 ```
