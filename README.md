@@ -16,7 +16,7 @@
 
  
 ```js
-  Run locally 🏃  
+Run locally 🏃  
 lerna bootstrap --hoist
 npm run start:dev
 ```
