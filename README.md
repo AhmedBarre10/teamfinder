@@ -7,7 +7,11 @@
 <p align="center">
   <strong>A Platform that connects NBA2K talent 🏀 </strong>
 </p>
-<p align = "center" style = "background-color:white" >
+
+
+
+
+<p align = "center">
 
 
 
