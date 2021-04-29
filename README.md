@@ -8,11 +8,12 @@
   <strong>A Platform that connects NBA2K talent 🏀 </strong>
 </p>
 
+<br>
+
 
 <p align="center">
    Getting Started ✅ 
 </p>
-<br>
 <p align="center">
 lerna bootstrap --hoist npm run start:dev
 </p>
