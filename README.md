@@ -3,6 +3,9 @@
  
 <img  src = "https://i.ibb.co/rfsHZzm/Group-4.png"/>
 </p>
+<img style="-webkit-user-select: none;margin: auto;cursor: zoom-in;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://i.ibb.co/rfsHZzm/Group-4.png" width="385" height="172">
+
+
 # Team Finder  Repo
 
 start the server & client by running this
