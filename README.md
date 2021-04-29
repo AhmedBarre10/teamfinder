@@ -10,11 +10,11 @@
 
 
 <p align="center">
-  <strong>
-   
-   Getting Started ✅ lerna bootstrap --hoist npm run start:dev
- 
- </strong>
+   Getting Started ✅ 
+</p>
+<br>
+<p align="center">
+lerna bootstrap --hoist npm run start:dev
 </p>
 
 
