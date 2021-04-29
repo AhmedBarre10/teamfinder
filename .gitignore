@@ -1,8 +1,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,node,dotenv,macos,windows,linux,react,reactnative,emacs,vim
 # Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,node,dotenv,macos,windows,linux,react,reactnative,emacs,vim
 
-### dotenv ###
+### dotenv ###$
 .env
+env
 
 ### Emacs ###
 # -*- mode: gitignore; -*-

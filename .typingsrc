@@ -1,4 +1,5 @@
 {
   "proxy": "http://localhost:3000/",
-  "rejectUnauthorized": false
+  "rejectUnauthorized": false,
+  "one"
 }

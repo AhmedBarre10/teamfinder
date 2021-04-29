@@ -4,7 +4,7 @@ start the server & client by running this
 
 ```
 
-lerna bootsteap --hoist
+lerna bootstrap --hoist
  npm run start:dev
 ```
 
