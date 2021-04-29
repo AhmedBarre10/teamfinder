@@ -12,7 +12,7 @@
 <hr>
 
 <p align="center">
-  How to run locally✅ 
+  How to run locally ✅ 
 </p>
 <p align="center">
 1.lerna bootstrap --hoist
