@@ -7,6 +7,7 @@
 <p align="center">
   <strong>A Platform that connects NBA2K talent 🏀 </strong>
 </p>
+<p align = 'center'>
 
 <p align = 'center'>
 
@@ -17,3 +18,5 @@ lerna bootstrap --hoist
  npm run start:dev
  ```
  </p>
+  </p>
+
