@@ -7,10 +7,33 @@ import {
   Param,
   Patch,
   Delete,
-} from '@nestjs/common';
+  UseInterceptors,
+  UploadedFile,
 
+} from '@nestjs/common';
+import {Observable,of} from 'rxjs'
+import {diskStorage} from 'multer'
+import {v4 as uuidv4} from 'uuid'
+import { Res,Req,Request } from '@nestjs/common';
 import { Injectable, NotFoundException } from '@nestjs/common';
+import { FileInterceptor } from '@nestjs/platform-express';
 import { UserService } from './user.service';
+import path = require('path')
+import { join } from 'path';
+import * as AWS from 'aws-sdk';
+
+export const storage = {
+  storage: diskStorage({
+      destination: './uploads/profileimages',
+      filename: (req, file, cb) => {
+          const filename: string = path.parse(file.originalname).name.replace(/\s/g, '') + uuidv4();
+          const extension: string = path.parse(file.originalname).ext;
+
+          cb(null, `${filename}${extension}`)
+      }
+  })
+
+}
 
 @Injectable()
 @Controller('auth')
@@ -24,6 +47,7 @@ export class UserController {
   ) {
     return this.userService.addUser(email, password);
   }
+
 
   @Post('signup')
   async signup(
@@ -48,4 +72,17 @@ export class UserController {
   ) {
     return this.userService.resetPassword(email, password);
   }
+
+  @Put('upload')
+  async create(@Req() request, @Res() response) {
+    try {
+      await this.userService.fileupload(request, response);
+    } catch (error) {
+      return response
+        .status(500)
+        .json(`Failed to upload image file: ${error.message}`);
+    }
+  }
+
 }
+
