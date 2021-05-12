@@ -1,15 +1,16 @@
 import type { AppProps } from 'next/app'
-import { useEffect } from 'react'
+import "./App.css"
+import "./Nav.css"
+import "./Playercard.css"
+import Login from './Components/Login'
+import { StoreProvider } from 'easy-peasy';
+import { store } from './store';
 
 export default function App({ Component, pageProps }: AppProps): JSX.Element {
-
-  useEffect(() => {
-    const style = document.getElementById('server-side-styles')
-
-    if (style) {
-      style.parentNode.removeChild(style)
-    }
-  })
-
-  return <Component {...pageProps} />
+return (
+   <StoreProvider store={store}>
+  <Component {...pageProps} />
+    </StoreProvider>
+    
+    )
 }

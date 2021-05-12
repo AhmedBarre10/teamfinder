@@ -84,5 +84,19 @@ export class UserController {
     }
   }
 
+  @Get("/images/:key")
+  async getImages(@Param('key') key: string,@Req() req,@Res() res){
+    console.log(req.params)
+    const readStream = await this.userService.getFileStream(key)
+    readStream.pipe(res)
+  }
+
+  @Get("/:id")
+  async getUsersById(@Param('id') id:string){
+    return this.userService.getUserById(id)
+    
+  }
+  
+
 }
 

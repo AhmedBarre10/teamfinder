@@ -4,6 +4,12 @@ import { Document, Types, Schema as MongooseSchema } from 'mongoose';
 import { User } from '../User/user.schema';
 @Schema()
 export class Playercards extends Document {
+
+  
+
+  @Prop({ type: String, required: true })
+  Archetype: string;
+
   @Prop({ type: String, required: true })
   PlayerId: string;
 

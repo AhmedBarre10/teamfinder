@@ -53,7 +53,6 @@ export class PlayercardService {
         Twitch,
         PlayerId,
       });
-
       const result = await newPlayercard.save();
       return result;
     } catch (err) {
@@ -86,7 +85,7 @@ export class PlayercardService {
     Instagram: string,
     Twitch: string,
     PlayerId: String,
-    oldPlayerCard: string,
+    id: string,
   ) {
     const newPlayercard = new this.PlayercardModel({
       Archetype,
@@ -104,13 +103,23 @@ export class PlayercardService {
       Instagram,
       Twitch,
       PlayerId,
-      oldPlayerCard,
     });
 
-    let oldPlayerCards = await this.PlayercardModel.findOne({
-      PlayerId: oldPlayerCard,
-    }).exec();
-    oldPlayerCards.Overall = newPlayercard.Overall;
+    let oldPlayerCards = await this.PlayercardModel.findById(id);
+    oldPlayerCards.Bio = newPlayercard.Bio
+    oldPlayerCards.Archetype = newPlayercard.Archetype
+    oldPlayerCards.Overall = newPlayercard.Overall
+    oldPlayerCards.Winpercentage = newPlayercard.Winpercentage
+    oldPlayerCards.Rep = newPlayercard.Rep
+    oldPlayerCards.System = newPlayercard.System
+    oldPlayerCards.Position = newPlayercard.Position
+    oldPlayerCards.Gamertag = newPlayercard.Gamertag
+    oldPlayerCards.Twitter = newPlayercard.Twitter
+    oldPlayerCards.Instagram = newPlayercard.Instagram
+    oldPlayerCards.Twitch = newPlayercard.Twitch
+    oldPlayerCards.PlayerId = newPlayercard.PlayerId
+
+  
 
     const result = await oldPlayerCards.save();
     return result;
@@ -119,20 +128,50 @@ export class PlayercardService {
   async findPlayerCard(id: string): Promise<Playercards> {
     let Info;
     try {
-      Info = await this.PlayercardModel.findOne({
+     Info = await this.PlayercardModel.find({
         PlayerId: id,
       }).exec();
+      return Info
     } catch (error) {
       throw new NotFoundException(error);
     }
-    if (!Info) {
-      throw new NotFoundException('Could not find product.');
-    }
-    return Info;
+   
   }
 
-  async findByPlayerId(id) {
-    const player = await this.PlayercardModel.find({ PlayerId: id });
-    return player;
+  async findByPlayerById(id) {
+    try{
+      const player = await this.PlayercardModel.findById(id);
+      return player;
+    }
+
+    catch(error){
+      console.log(error)
+    }
+  
+  }
+
+  async delete(id){
+    try{
+      const Player = await this.PlayercardModel.findById(id)
+      return Player.deleteOne()
+    }
+    catch (error) {
+      return error
+    }
+
+  }
+
+
+
+  async findMe(id){
+    let Info;
+    try {
+     Info = await this.PlayercardModel.find({
+        PlayerId: id,
+      }).exec();
+      return Info
+    } catch (error) {
+      throw new NotFoundException(error);
+    }
   }
 }

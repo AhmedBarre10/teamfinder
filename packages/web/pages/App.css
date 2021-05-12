@@ -1,0 +1,928 @@
+.App {
+    text-align: center;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+
+:root {
+    --color-button-text: #fff;
+    --color-primary-100: #dee3ea;
+    --color-primary-200: #b2bdcd;
+    --color-primary-300: #5d7290;
+    --color-primary-600: #323d4d;
+    --color-primary-700: #242c37;
+    --color-primary-800: #151a21;
+    --color-primary-900: #0b0e11;
+    --color-secondary-washed-out: #879eed;
+    --color-secondary: #5575e7;
+    --color-accent-glow: rgba(253, 77, 77, 0.3);
+    --color-accent: #fd4d4d;
+    --color-accent-hover: #fd6868;
+    --color-accent-disabled: #f5bfbf;
+    --color-accent-glow: rgba(253, 77, 77, 0.3);
+    --color-accent: rgb(0, 255, 119);
+    --color-accent-hover: #fd6868;
+    --color-accent-disabled: #f5bfbf;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700;900&display=swap');
+nav {
+}
+.infos {
+}
+button {
+    cursor: pointer;
+}
+.Gamertag,
+.Archetype,
+.Overall,
+.Position,
+.Winpercentage,
+.PlayStyle {
+    font-family: 'Poppins', sans-serif;
+}
+.Archetype,
+.Overall,
+.Position,
+.Winpercentage,
+.PlayStyle {
+    font-family: 'Poppins', sans-serif;
+}
+
+.Overall {
+    font-size: 14px;
+    position: relative;
+    bottom: 2rem;
+}
+
+html,
+body,
+App {
+    background-color: var(--color-primary-900);
+    font-family: 'Poppins', sans-serif;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+.App-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+.App-header {
+    background-color: #000000;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+::-webkit-input-placeholder {
+    color: rgb(255, 255, 255);
+    padding: 4px;
+}
+
+input {
+    outline: none;
+    border: none;
+}
+
+.system {
+    margin: 0;
+    position: relative;
+    left: 10px;
+}
+
+.X {
+    position: absolute;
+    left: 80%;
+    top: 11%;
+}
+
+.none {
+    display: none;
+}
+
+.offline {
+    background-color: red;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+.t {
+    position: relative;
+    top: 14rem;
+}
+.t p {
+    font-size: 12px;
+}
+.online {
+    background-color: greenyellow;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+
+.welcomes {
+    position: absolute;
+    top: 6rem;
+}
+
+ul {
+    position: relative;
+    top: 200px;
+}
+
+.Superstar {
+    background-image: url('../public/superstar.png');
+    height: 140px;
+    width: 120px;
+    background-repeat: no-repeat;
+    position: relative;
+    bottom: 0rem;
+    margin-bottom: 2rem;
+    background-size: 100px;
+}
+
+.Elite {
+    background-image: url('../public/Elite.png');
+    height: 140px;
+    width: 120px;
+    background-repeat: no-repeat;
+    position: relative;
+    bottom: 0rem;
+    margin-bottom: 2rem;
+    background-size: 100px;
+}
+input:active {
+    background-color: black;
+}
+
+.Pro {
+    background-image: url('../public/Pro.png');
+    height: 140px;
+    width: 120px;
+    background-repeat: no-repeat;
+    position: relative;
+    bottom: 0rem;
+    margin-bottom: 2rem;
+    background-size: 100px;
+}
+
+.Allstar {
+    background-image: url('../public/Allstar.png');
+    height: 140px;
+    width: 120px;
+    background-repeat: no-repeat;
+    position: relative;
+    bottom: 0rem;
+    margin-bottom: 2rem;
+    background-size: 100px;
+}
+
+.Legend {
+    background-image: url('../public/Legend.png');
+    height: 140px;
+    width: 120px;
+    background-repeat: no-repeat;
+    position: relative;
+    bottom: 0rem;
+    margin-bottom: 2rem;
+    background-size: 100px;
+}
+
+#my {
+    position: relative;
+    left: 30%;
+}
+
+
+@media (min-width: 1300px) {
+    .blue {
+        position: relative;
+        left: 0.2rem;
+        top: 1rem;
+    }
+
+
+
+    nav {
+        position: fixed;
+        width: 5rem;
+        height: 100rem;
+        z-index: 2;
+        left: -1px;
+    }
+}
+@media (min-width: 950px) {
+    .mobile {
+        display: none;
+    }
+}
+
+@media (max-width: 950px) {
+    .mobileCont {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        left: 1rem;
+        top: 20rem;
+        width: 100%;
+    }
+    .mobile {
+        width: 400px;
+        height: 300px;
+    }
+}
+
+.edit {
+    height: 2rem;
+    margin: 0;
+    position: relative;
+    top: 2rem;
+    padding: 10px;
+}
+.edit a {
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    text-decoration: none;
+}
+
+.Animation {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    right: 0rem;
+    bottom: 0rem;
+    background-color: rgb(0, 0, 0);
+    z-index: 9933800;
+}
+
+.lds-dual-ring {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    position: relative;
+    top: 23rem;
+}
+.lds-dual-ring:after {
+    content: ' ';
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid rgb(0, 255, 136);
+    border-color: rgb(0, 255, 136) transparent rgb(0, 255, 136) transparent;
+    animation: lds-dual-ring 1s linear infinite;
+}
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #000000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(0, 255, 179);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+}
+a {
+    color: white;
+}
+.EditContainer {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 0rem;
+}
+
+.EditContainer form {
+    display: flex;
+    flex-direction: column;
+    width: 30rem;
+}
+
+.EditContainer input,
+select,
+button {
+    margin: 1rem;
+    background-color: rgb(0, 0, 0);
+    border: none;
+    outline: none;
+    color: rgb(0, 255, 136);
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.EditContainer input {
+}
+.EditContainer button {
+    background-color: rgb(0, 255, 149);
+    color: black;
+    font-family: Poppins;
+}
+
+.EditContainer {
+    padding: 0;
+    color: white;
+}
+.Sucessfully.Updated {
+    background-color: rgb(0, 255, 136);
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+.info.validation.failed {
+    background-color: rgb(255, 0, 0);
+    color: rgb(255, 255, 255);
+    font-family: 'Poppins', sans-serif;
+}
+
+.auth-cont {
+    display: flex;
+    justify-content: center;
+}
+.login-cont.login {
+    width: 100%;
+}
+.authSubmit {
+    background-color: #00ff6a;
+    color: black;
+    position: relative;
+    top: 0rem;
+    margin: 1.5rem;
+    padding: 20px;
+    border-radius: 2%;
+    cursor: pointer;
+}
+.login p {
+    text-align: left;
+    position: relative;
+    font-weight: bold;
+    font-size: 15px;
+    left: 2rem;
+}
+.login-cont.login form {
+    display: flex;
+    width: 48rem;
+    flex-direction: column;
+}
+.login-cont.login input {
+    margin: 20px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+.reservee {
+    width: 40rem;
+    height: 20rem;
+    position: relative;
+    top: 12rem;
+}
+.reservee h1 {
+    position: relative;
+    top: 5rem;
+    color: rgb(255, 255, 255);
+}
+.reservee p {
+    font-size: 15px;
+    position: relative;
+    top: 6rem;
+    color: rgb(255, 255, 255);
+}
+.p2 {
+}
+.Sucessfully.updated {
+    background-color: rgb(0, 255, 136);
+    color: black;
+    font-family: 'Poppins', sans-serif;
+}
+.Reserved {
+    background-color: rgb(14, 14, 14);
+    color: rgb(255, 255, 255);
+    font-family: 'Poppins', sans-serif;
+    border-radius: 10px 10px 10px 10px;
+    height: 20rem;
+}
+
+#repImage {
+    position: relative;
+    left: 0rem;
+    margin-top: 2rem;
+}
+
+.none {
+    display: none;
+}
+
+/* Change the white to any color ;) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px rgb(0, 0, 0) inset !important;
+}
+/*Change text in autofill textbox*/
+input:-webkit-autofill {
+    -webkit-text-fill-color: rgb(0, 255, 106);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-text-fill-color: rgb(0, 255, 106);
+    -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.NotFound {
+    color: white;
+    position: absolute;
+    left: 45rem;
+    top: 1rem;
+}
+.NotFound h1 {
+    font-size: 15rem;
+}
+.NotFound p {
+}
+
+@media (min-width: 950px) {
+    .EditContainer form {
+        display: flex;
+        flex-direction: column;
+        width: 70rem;
+    }
+}
+
+select,
+textarea,
+input {
+    font-size: 16px;
+}
+
+.BadgeGrindersCont {
+    position: relative;
+    top: 5rem;
+    font-size: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.BadgeGrindersCont h1 {
+    position: absolute;
+}
+
+.bio {
+    background-color: rgb(12, 12, 12);
+    color: white;
+    margin: 1rem;
+    border: none;
+    outline: none;
+    color: rgb(0, 255, 136);
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    width: 17rem;
+    max-width: 17rem;
+    min-width: 17rem;
+
+    height: 10rem;
+    max-height: 10rem;
+    min-height: 10rem;
+}
+
+.undefined {
+    display: none;
+}
+
+form {
+    position: relative;
+    top: 10rem;
+}
+form input {
+    background-color: rgb(0, 0, 0);
+    padding: 10px;
+    height: 2rem;
+    border-bottom: 2px solid rgb(85, 85, 85);
+    border-radius: 0px;
+    color: white;
+}
+.expired {
+    position: absolute;
+    font-size: 3rem;
+    top: 5rem;
+}
+.Sucessfully.Updated.reset {
+    padding: 60px;
+    height: 2rem;
+}
+
+.error {
+    background-color: red;
+    padding: 20px;
+}
+
+@media (max-width: 1300px) {
+    .login-cont.login form {
+        position: relative;
+
+        top: 25rem;
+        right: 2rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .login-cont.login {
+        width: 88%;
+    }
+    .login-cont.login input {
+        margin: 20px;
+    }
+    input {
+        margin: 2rem;
+    }
+
+    nav {
+        position: relative;
+        right: 5rem;
+        top: 2rem;
+    }
+
+    nav a {
+        font-size: 12px;
+        position: relative;
+        color: rgb(255, 255, 255);
+        z-index: 5;
+    }
+}
+
+.Passwordreset {
+    width: 100rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.Passwordreset form {
+    background-color: rgb(15, 15, 15);
+    display: flex;
+    flex-direction: column;
+    width: 50rem;
+}
+
+.none {
+    display: none;
+}
+
+.blue {
+    color: rgb(0, 255, 106);
+    text-decoration: none;
+    position: relative;
+    right: 6rem;
+    margin-bottom: 5rem;
+}
+
+.alert {
+    background-color: red;
+    padding: 20px;
+}
+
+.forgotCont {
+    display: flex;
+    justify-content: center;
+}
+
+.forgot form {
+    display: flex;
+    flex-direction: column;
+}
+.forgot button {
+    color: black;
+    font-size: 1rem;
+    background-color: #00ff6a;
+}
+
+.linkSent {
+    position: relative;
+    top: 12rem;
+}
+
+span {
+    font-weight: bold;
+}
+
+@media (min-width: 1300px) {
+    .EditContainer {
+        width: 90%;
+        position: relative;
+        left: 9rem;
+    }
+    .createPlayerCard {
+        z-index: -2230;
+    }
+}
+
+.videoCont {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    top: 35rem;
+}
+
+.black {
+    background-color: rgb(0, 0, 0);
+    z-index: 33333;
+    padding: 12px;
+    height: 0px;
+    width: 65px;
+    position: absolute;
+    top: 8rem;
+}
+.video {
+    position: absolute;
+    width: 15rem;
+    left: 1rem;
+    height: 20rem;
+    display: none;
+}
+
+.container {
+    position: absolute;
+    left: 2rem;
+    z-index: 2222;
+    background-color: white;
+    color: black;
+}
+
+.hero {
+    border-radius: 5%;
+    width: 60%;
+    height: auto;
+    position: relative;
+    top: 16rem;
+}
+
+@media (max-width: 1300px) {
+    .formCont {
+        display: flex;
+        justify-content: flex-end;
+        position: relative;
+        right: 2rem;
+    }
+    .welcome {
+        font-size: 15px;
+    }
+
+}
+.welcomeMain {
+    width: 80%;
+}
+.welcome {
+    position: relative;
+    top: 9rem;
+    width: 97%;
+    z-index: 50;
+}
+.noPlayer {
+    position: relative;
+    top: 20rem;
+}
+
+.name {
+    font-size: 12px;
+    color: rgb(255, 255, 255);
+    position: relative;
+    top: 28px;
+    left: 1rem;
+}
+
+.mesCont {
+    display: flex;
+    justify-content: flex-end;
+}
+.fle {
+}
+.fle {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+.fle.other {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+}
+.myBubblecont {
+    border-radius: 25%;
+    margin: 20px;
+    height: auto;
+    display: flex;
+    text-align: center;
+    flex-direction: flex-end;
+    position: relative;
+}
+.messagebubble.me {
+    background-color: rgb(0, 132, 255);
+    border-radius: 30%;
+    margin: 20px;
+    padding: 25px;
+
+    height: auto;
+    display: flex;
+    text-align: center;
+    justify-content: flex-end;
+    position: relative;
+}
+.messagebubble.other {
+    background-color: rgb(70, 70, 70);
+    border-radius: 30%;
+    margin: 20px;
+    padding: 25px;
+    height: auto;
+    display: flex;
+    text-align: center;
+    justify-content: flex-start;
+}
+
+.messageCont {
+    display: flex;
+    width: 100%;
+    height: 50rem;
+    justify-content: flex-end;
+    position: relative;
+    top: 4rem;
+}
+.messageText {
+    height: auto;
+    width: 100%;
+    resize: none;
+    word-break: break-all;
+    height: 5rem;
+    background-color: black;
+    font-family: sans-serif;
+    color: white;
+    position: relative;
+    right: 2rem;
+
+    outline: none;
+}
+form button {
+    position: relative;
+    bottom: 2rem;
+}
+form {
+    height: 0rem;
+    position: relative;
+    top: 7rem;
+    width: 48%;
+    left: 2rem;
+}
+.formCont {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    right: 2rem;
+    top: -10rem;
+}
+.messages {
+    display: flex;
+
+    overflow-y: scroll;
+    width: 50%;
+    height: 40rem;
+    justify-content: center;
+    background-color: var(--color-primary-800);
+    flex-direction: column;
+}
+.textmeassage {
+    text-align: center;
+}
+
+@media (max-width: 1300px) {
+    .messageCont {
+        display: flex;
+        width: 100%;
+        height: 50rem;
+        justify-content: center;
+        position: relative;
+        top: 10rem;
+    }
+    form {
+        display: flex;
+        justify-content: center;
+        background-color: red;
+    }
+    .messageText {
+        height: auto;
+        background-color: red;
+
+        width: 100%;
+        resize: none;
+        word-break: break-all;
+        height: 12rem;
+        background-color: black;
+        font-family: sans-serif;
+        color: white;
+        position: relative;
+        right: 16rem;
+
+        outline: none;
+    }
+    .messages {
+        display: flex;
+        width: 90%;
+
+        height: 50rem;
+        justify-content: center;
+        background-color: var(--color-primary-800);
+    }
+}
+
+.containerm {
+    overflow-y: scroll;
+    height: 20rem;
+    position: relative;
+    top: 5rem;
+}
+.getStartedCont{
+    color: black;
+
+    text-align: center;
+
+}
+.custom-btn{
+    background-color:#00ff6a;
+    padding:0.5rem;
+    text-align: center;
+    color: black;
+}
+
+.getStartedButton a {
+    background-color:#00ff6a;
+    padding:0.5rem;
+    text-align: center;
+    padding:10px;
+    color: black;
+    width:11rem;
+    display:flex;
+    justify-content:center
+
+}
+
+.getStartedConst{
+    position: relative;
+    top: 12rem;
+    display:flex;
+    justify-content:center;
+    color: black;
+
+}

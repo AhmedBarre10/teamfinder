@@ -52,7 +52,7 @@ export class UserService {
         },
       };
 
-      return this.jwt.sign(payload);
+      return {token:this.jwt.sign(payload),userInfo:user};
     } catch (err) {
       return err;
     }
@@ -64,6 +64,10 @@ export class UserService {
     return users;
   }
 
+  async getUserById(id){
+    const user = await this.UserModel.findById(id)
+    return user
+  }
   async signup(
     @Body('name') name: string,
     @Body('email') email: string,
@@ -123,13 +127,30 @@ export class UserService {
 
   async fileupload(@Req() req, @Res() res) {
     try {
+
+    const user = await this.UserModel.findById(req.user.id);
       console.log('hey')
 AWS.config.update({
   accessKeyId:"AKIASWPEYLNB5JQETP7L",
   secretAccessKey:"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"
 });
       
-      this.upload(req, res, function(error) {
+let update = multer({
+  storage: multerS3({
+    s3: new AWS.S3(),
+    bucket:"teamfinderphotos",
+    // acl: 'public-read',
+    key: function(request, file, cb) {
+      let imagename = `${req.user.id.toString()}${file.originalname}`
+      user.profileImage = imagename
+      user.save()
+
+      cb(null,imagename);
+    },
+  }),
+}).array('upload', 1)
+
+       update(req, res, function(error) {
         if (error) {
           console.log(error);
           return res.status(404).json(`Failed to upload image file: ${error}`);
@@ -144,16 +165,23 @@ AWS.config.update({
     }
   }
 
-  upload = multer({
-    storage: multerS3({
-      s3: new AWS.S3(),
-      bucket:"teamfinderphotos",
-      // acl: 'public-read',
-      key: function(request, file, cb) {
-        cb(null, `${Date.now().toString()} - ${file.originalname}`);
-      },
-    }),
-  }).array('upload', 1);
+ 
 
+
+
+  async getFileStream(fileKey:string) {
+    const s3 = new AWS.S3();
+    const downloadParams = {
+      Key: fileKey,
+      Bucket: "teamfinderphotos"
+    }
+  
+    return s3.getObject(downloadParams).createReadStream()
+  }
+
+  async getMe(id:string){
+    const myInfo = this.UserModel.findById(id);
+    return myInfo
+  }
 
 }

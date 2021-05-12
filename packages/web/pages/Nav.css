@@ -1,0 +1,108 @@
+.find {
+    color: rgb(0, 255, 179);
+}
+.navi{
+background-color:red;
+width:20rem;
+position: absolute;
+top: 0;
+left: 0;
+display: flex;
+
+}
+.navCont{
+    position: relative;
+    top: 5rem;
+    display: flex;
+    height:40rem;
+    flex-direction:column;
+    left: 2rem
+
+    
+}
+
+nav{
+    background-color:var(--color-primary-800);
+    width:15rem;
+    position: fixed;
+    height:100vh;
+    display: flex;
+    top: 0;
+    justify-content: flex-start;
+
+
+    }
+    .navCont a{
+        margin-top:2rem;
+        margin-right: 1rem;
+    }
+    .navCont svg{
+        position: relative;
+        bottom:1rem
+    }
+    .homeCont1{
+        display: flex;
+        position: relative;
+    }
+
+    .homeCont2{
+        display: flex;
+        position: relative;
+    }
+
+    .homeCont3{
+        display: flex;
+    }
+
+    .homeCont4{
+        display: flex;
+    }
+
+    .logo-cont img{
+        width:8rem;
+        margin-bottom: 1rem;
+    }
+
+
+    @media(max-width:1300px){
+        nav{
+            background:var(--color-primary-900);
+            display: flex;
+            flex-direction: row;
+            height:10rem;
+            width:100vw;
+            left:0.0rem;
+            z-index: 100;
+            justify-content:center;
+
+        }
+        .logo{
+            display:none
+        }
+        .navi{
+            display:flex;
+            flex-direction: row;
+            width:100%;
+
+        }
+
+        .navCont{
+            display:flex;
+            height:2rem;
+            flex-direction: row;
+
+        
+        
+        }
+
+    }
+
+
+    .homeCont3false{
+        display:none
+    }
+    .homeCont3true{
+        display:flex
+    }
+
+   
