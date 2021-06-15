@@ -1,4 +1,4 @@
-import { Body, Req,Res } from '@nestjs/common';
+import { Body, Req, Res } from '@nestjs/common';
 import { get } from 'mongoose';
 import * as bcrypt from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
@@ -8,15 +8,10 @@ import { Model } from 'mongoose';
 import { Request } from '@nestjs/common';
 import { User } from './user.schema';
 
-
 import * as multer from 'multer';
 import * as AWS from 'aws-sdk';
 import * as multerS3 from 'multer-s3';
 import { ConfigService } from '@nestjs/config';
-
-
-
-
 
 @Injectable()
 export class UserService {
@@ -24,8 +19,6 @@ export class UserService {
     @InjectModel('User') private readonly UserModel: Model<User>,
     private jwt: JwtService,
     private configService: ConfigService,
-    
-    
   ) {}
 
   async addUser(
@@ -52,7 +45,7 @@ export class UserService {
         },
       };
 
-      return {token:this.jwt.sign(payload),userInfo:user};
+      return { token: this.jwt.sign(payload), userInfo: user };
     } catch (err) {
       return err;
     }
@@ -64,9 +57,9 @@ export class UserService {
     return users;
   }
 
-  async getUserById(id){
-    const user = await this.UserModel.findById(id)
-    return user
+  async getUserById(id) {
+    const user = await this.UserModel.findById(id);
+    return user;
   }
   async signup(
     @Body('name') name: string,
@@ -91,7 +84,6 @@ export class UserService {
       user.password = await bcrypt.hash(password, salt);
 
       await user.save();
-      console.log('saved');
 
       const payload = {
         user: {
@@ -101,7 +93,6 @@ export class UserService {
 
       return this.jwt.sign(payload);
     } catch (err) {
-      console.log(err);
       return err;
     }
   }
@@ -115,73 +106,64 @@ export class UserService {
     return user;
   }
 
-  async getUserAndSaveProfile(id:string,filename){
-  let user = await this.UserModel.findById(id)
-  user.profileImage = filename;
-  await user.save();
-  return user
-
+  async getUserAndSaveProfile(id: string, filename) {
+    let user = await this.UserModel.findById(id);
+    user.profileImage = filename;
+    await user.save();
+    return user;
   }
-
-
 
   async fileupload(@Req() req, @Res() res) {
     try {
+      const user = await this.UserModel.findById(req.user.id);
+      AWS.config.update({
+        accessKeyId: 'AKIASWPEYLNB5JQETP7L',
+        secretAccessKey: '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',
+      });
 
-    const user = await this.UserModel.findById(req.user.id);
-      console.log('hey')
-AWS.config.update({
-  accessKeyId:"AKIASWPEYLNB5JQETP7L",
-  secretAccessKey:"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"
-});
-      
-let update = multer({
-  storage: multerS3({
-    s3: new AWS.S3(),
-    bucket:"teamfinderphotos",
-    // acl: 'public-read',
-    key: function(request, file, cb) {
-      let imagename = `${req.user.id.toString()}${file.originalname}`
-      user.profileImage = imagename
-      user.save()
+      let update = multer({
+        storage: multerS3({
+          s3: new AWS.S3(),
+          bucket: 'teamfinderphotos',
+          // acl: 'public-read',
+          key: function (request, file, cb) {
+            let imagename = `${req.user.id.toString()}${file.originalname}`;
+            user.profileImage = imagename;
+            user.save();
+            console.log(cb);
 
-      cb(null,imagename);
-    },
-  }),
-}).array('upload', 1)
+            cb(null, imagename);
+          },
+        }),
+      }).array('upload', 1);
 
-       update(req, res, function(error) {
+      update(req, res, function (error) {
         if (error) {
-          console.log(error);
           return res.status(404).json(`Failed to upload image file: ${error}`);
         }
         return res.status(201).json(req.files[0].location);
       });
     } catch (error) {
-      console.log('get')
-      console.log(this.configService.get('AWS_S3_BUCKET_NAME'))
-      console.log(error);
       return res.status(500).json(`Failed to upload image file: ${error}`);
     }
   }
 
- 
-
-
-
-  async getFileStream(fileKey:string) {
+  async getFileStream(fileKey: string) {
     const s3 = new AWS.S3();
+    if (fileKey === 'none') {
+      fileKey = fileKey + '.png';
+    }
     const downloadParams = {
       Key: fileKey,
-      Bucket: "teamfinderphotos"
-    }
-  
-    return s3.getObject(downloadParams).createReadStream()
+      Bucket: 'teamfinderphotos',
+    };
+    console.log(fileKey);
+
+    return s3.getObject(downloadParams).createReadStream();
   }
 
-  async getMe(id:string){
+  async getMe(id: string) {
     const myInfo = this.UserModel.findById(id);
-    return myInfo
+    return myInfo;
   }
-
 }

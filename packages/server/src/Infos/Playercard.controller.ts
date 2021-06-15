@@ -1,4 +1,13 @@
-import { Controller, Post, Body, Get, Param, Put, Delete, Req } from '@nestjs/common';
+import {
+  Controller,
+  Post,
+  Body,
+  Get,
+  Param,
+  Put,
+  Delete,
+  Req,
+} from '@nestjs/common';
 
 import { PlayercardService } from './Playercard.service';
 import { Request } from '@nestjs/common';
@@ -27,12 +36,11 @@ export class PlayercardController {
     @Request() request,
   ) {
     const PlayerId = request.user.id;
-   console.log(PlayerId);
-    if(PlayerId !== request.user.id){ 
-    console.log('not user ')
-      return null
+    console.log(PlayerId);
+    if (PlayerId !== request.user.id) {
+      console.log('not user ');
+      return null;
     }
-    
 
     const generatedId = await this.playercardService.insertInfo(
       Archetype,
@@ -71,12 +79,11 @@ export class PlayercardController {
     @Body('Youtube') Youtube: string,
     @Body('Instagram') Instagram: string,
     @Body('Twitch') Twitch: string,
-    @Param('id') id:string,
+    @Param('id') id: string,
     @Request() request,
   ) {
     const PlayerId = request.user.id;
 
-    
     return this.playercardService.updatePlayerCard(
       Archetype,
       Overall,
@@ -119,12 +126,12 @@ export class PlayercardController {
   }
 
   @Delete('/myplayers/:id')
-  async deletePlayerCard(@Param('id') id: string){
-    this.playercardService.delete(id)
+  async deletePlayerCard(@Param('id') id: string) {
+    this.playercardService.delete(id);
   }
-    @Get("/myplayers")
-  async getMe(@Request() request){
-    const player = request.user.id
-    return this.playercardService.findMe(player)
+  @Get('/myplayers')
+  async getMe(@Request() request) {
+    const player = request.user.id;
+    return this.playercardService.findMe(player);
   }
 }

@@ -1,108 +1,142 @@
 .find {
-    color: rgb(0, 255, 179);
+     color: rgb(0, 255, 179);
 }
-.navi{
-background-color:red;
-width:20rem;
-position: absolute;
-top: 0;
-left: 0;
-display: flex;
-
+.navi {
+     background-color: red;
+     width: 20rem;
+     position: absolute;
+     top: 0;
+     left: 0;
+     display: flex;
 }
-.navCont{
-    position: relative;
-    top: 5rem;
-    display: flex;
-    height:40rem;
-    flex-direction:column;
-    left: 2rem
-
-    
+.navCont {
+     position: relative;
+     top: 6rem;
+     display: flex;
+     height: 40rem;
+     flex-direction: column;
+     left: 2rem;
 }
 
-nav{
-    background-color:var(--color-primary-800);
-    width:15rem;
-    position: fixed;
-    height:100vh;
-    display: flex;
-    top: 0;
-    justify-content: flex-start;
+nav {
+     background-color: var(--color-primary-800);
+     width: 10rem;
+     position: fixed;
+     height: 100vh;
+     display: flex;
+     top: 0;
+     justify-content: center;
+}
+.navCont a {
+     margin-top: 2rem;
+     margin-right: 1rem;
+}
+.navCont svg {
+     position: relative;
+     bottom: 1rem;
+}
+.homeCont1 {
+     display: flex;
+     position: relative;
+}
 
+.homeCont2 {
+     display: flex;
+     position: relative;
+}
 
-    }
-    .navCont a{
-        margin-top:2rem;
-        margin-right: 1rem;
-    }
-    .navCont svg{
-        position: relative;
-        bottom:1rem
-    }
-    .homeCont1{
-        display: flex;
-        position: relative;
-    }
+.homeCont3 {
+     display: flex;
+}
 
-    .homeCont2{
-        display: flex;
-        position: relative;
-    }
+.homeCont4 {
+     display: flex;
+}
 
-    .homeCont3{
-        display: flex;
-    }
+.logo-cont svg {
+     width: 6rem;
+     margin-bottom: 1rem;
+     user-select: none;
+     border-radius: 15px;
+     background-color: var(--color-accent);
+}
+.logo-cont svg rect {
+     background: #151a21;
+}
+.logo-cont img {
+     width: 100%;
+}
+.logo-cont {
+     width: 7rem;
+     height: 3rem;
+     padding: 0;
+     right: 3rem;
+     user-select: none;
+     margin: 0;
+     position: relative;
+     bottom: 4rem;
+}
 
-    .homeCont4{
-        display: flex;
-    }
+.logo {
+     width: 10%;
+}
+.logo-cont-mobile {
+     display: none;
+}
+@media (max-width: 1300px) {
+     .logo-cont-mobile svg {
+          width: 6rem;
+          margin-bottom: 1rem;
+          user-select: none;
+          border-radius: 15px;
+          background-color: var(--color-accent);
+     }
+     .logo-cont-mobile svg rect {
+          background: #151a21;
+     }
+     .logo-cont-mobile img {
+          width: 100%;
+     }
+     .logo-cont-mobile {
+          width: 7rem;
+          height: 3rem;
+          padding: 0;
+          right: 3rem;
+          user-select: none;
+          margin: 0;
+          position: relative;
+          bottom: 4rem;
+     }
 
-    .logo-cont img{
-        width:8rem;
-        margin-bottom: 1rem;
-    }
+     nav {
+          background: var(--color-primary-900);
+          display: flex;
+          flex-direction: row;
+          height: 10rem;
+          width: 100%;
+          left: 0rem;
+          z-index: 100;
+          justify-content: center;
+     }
+     .logo-cont {
+          display: none;
+     }
+     .navi {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+     }
 
+     .navCont {
+          display: flex;
+          height: 2rem;
+          flex-direction: row;
+     }
+}
 
-    @media(max-width:1300px){
-        nav{
-            background:var(--color-primary-900);
-            display: flex;
-            flex-direction: row;
-            height:10rem;
-            width:100vw;
-            left:0.0rem;
-            z-index: 100;
-            justify-content:center;
-
-        }
-        .logo{
-            display:none
-        }
-        .navi{
-            display:flex;
-            flex-direction: row;
-            width:100%;
-
-        }
-
-        .navCont{
-            display:flex;
-            height:2rem;
-            flex-direction: row;
-
-        
-        
-        }
-
-    }
-
-
-    .homeCont3false{
-        display:none
-    }
-    .homeCont3true{
-        display:flex
-    }
-
-   
+.homeCont3false {
+     display: none;
+}
+.homeCont3true {
+     display: flex;
+}

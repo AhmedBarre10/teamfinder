@@ -106,20 +106,18 @@ export class PlayercardService {
     });
 
     let oldPlayerCards = await this.PlayercardModel.findById(id);
-    oldPlayerCards.Bio = newPlayercard.Bio
-    oldPlayerCards.Archetype = newPlayercard.Archetype
-    oldPlayerCards.Overall = newPlayercard.Overall
-    oldPlayerCards.Winpercentage = newPlayercard.Winpercentage
-    oldPlayerCards.Rep = newPlayercard.Rep
-    oldPlayerCards.System = newPlayercard.System
-    oldPlayerCards.Position = newPlayercard.Position
-    oldPlayerCards.Gamertag = newPlayercard.Gamertag
-    oldPlayerCards.Twitter = newPlayercard.Twitter
-    oldPlayerCards.Instagram = newPlayercard.Instagram
-    oldPlayerCards.Twitch = newPlayercard.Twitch
-    oldPlayerCards.PlayerId = newPlayercard.PlayerId
-
-  
+    oldPlayerCards.Bio = newPlayercard.Bio;
+    oldPlayerCards.Archetype = newPlayercard.Archetype;
+    oldPlayerCards.Overall = newPlayercard.Overall;
+    oldPlayerCards.Winpercentage = newPlayercard.Winpercentage;
+    oldPlayerCards.Rep = newPlayercard.Rep;
+    oldPlayerCards.System = newPlayercard.System;
+    oldPlayerCards.Position = newPlayercard.Position;
+    oldPlayerCards.Gamertag = newPlayercard.Gamertag;
+    oldPlayerCards.Twitter = newPlayercard.Twitter;
+    oldPlayerCards.Instagram = newPlayercard.Instagram;
+    oldPlayerCards.Twitch = newPlayercard.Twitch;
+    oldPlayerCards.PlayerId = newPlayercard.PlayerId;
 
     const result = await oldPlayerCards.save();
     return result;
@@ -128,48 +126,40 @@ export class PlayercardService {
   async findPlayerCard(id: string): Promise<Playercards> {
     let Info;
     try {
-     Info = await this.PlayercardModel.find({
+      Info = await this.PlayercardModel.find({
         PlayerId: id,
       }).exec();
-      return Info
+      return Info;
     } catch (error) {
       throw new NotFoundException(error);
     }
-   
   }
 
   async findByPlayerById(id) {
-    try{
+    try {
       const player = await this.PlayercardModel.findById(id);
       return player;
+    } catch (error) {
+      console.log(error);
     }
-
-    catch(error){
-      console.log(error)
-    }
-  
   }
 
-  async delete(id){
-    try{
-      const Player = await this.PlayercardModel.findById(id)
-      return Player.deleteOne()
+  async delete(id) {
+    try {
+      const Player = await this.PlayercardModel.findById(id);
+      return Player.deleteOne();
+    } catch (error) {
+      return error;
     }
-    catch (error) {
-      return error
-    }
-
   }
 
-
-
-  async findMe(id){
+  async findMe(id) {
     let Info;
     try {
-     Info = await this.PlayercardModel.find({
+      Info = await this.PlayercardModel.find({
         PlayerId: id,
       }).exec();
-      return Info
+      return Info;
     } catch (error) {
       throw new NotFoundException(error);
     }

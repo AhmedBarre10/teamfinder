@@ -1,386 +1,424 @@
 @media (max-width: 1300px) {
-    .statsCont {
-        display: flex;
-        flex-direction: column;
-    }
-    .cont {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        width: 100%;
-        position: relative;
-        top: 10rem;
-    }
-    .infoCont {
-        background-color: var(--color-primary-800);
-        position: relative;
-        margin: 0.1rem;
-        margin-top: 12rem;
-        width: 50rem;
-        padding-bottom: 13rem;
-        top: 5rem;
-        height: 55rem;
-        border-radius: 5% 5% 5% 5%;
-    }
+     .statsCont {
+          display: flex;
+          flex-direction: column;
+     }
+     .cont {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          width: 100%;
+          position: relative;
+          top: 10rem;
+     }
+     .infoCont {
+          background-color: var(--color-primary-800);
+          position: relative;
+          margin: 0.1rem;
+          margin-top: 12rem;
+          width: 50rem;
+          padding-bottom: 13rem;
+          top: 5rem;
+          height: 55rem;
+          border-radius: 5% 5% 5% 5%;
+     }
 
-    .featurereq {
-        display: flex;
-        justify-content: center;
-        position: relative;
-        top: 3rem;
-        background-color: var(--color-primary-700);
-        width: 100%;
-    }
-    .featurereq a {
-        text-decoration: none;
-        font-size: 15px;
-    }
+     .featurereq {
+          display: flex;
+          justify-content: center;
+          position: relative;
+          top: 3rem;
+          background-color: var(--color-primary-700);
+          width: 100%;
+     }
+     .featurereq a {
+          text-decoration: none;
+          font-size: 15px;
+     }
 }
 
 @media (min-width: 1300px) {
-    .bioView {
-        height: 12rem;
-        width: 80%;
-        padding: 10px;
-        border-radius: 5%;
-    }
+     .bioView {
+          height: 12rem;
+          width: 80%;
+          padding: 10px;
+          border-radius: 5%;
+     }
 
-    .cont {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        width: 80%;
-        position: relative;
-        z-index: 600;
-        left: 18rem;
-    }
-    .rangeContainer {
-        display: flex;
-        justify-content: center;
-        flex-direction: row;
-    }
-    .rangeColumn {
-        display: flex;
-        justify-content: center;
-        flex-direction: row;
-    }
+     .cont {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          width: 80%;
+          position: relative;
+          z-index: 600;
+          left: 18rem;
+     }
+     .rangeContainer {
+          display: flex;
+          justify-content: center;
+          flex-direction: row;
+     }
+     .rangeColumn {
+          display: flex;
+          justify-content: center;
+          flex-direction: row;
+     }
 }
 .featurereq {
-    position: absolute;
-    text-decoration: none;
-    top: -1rem;
-    background-color: var(--color-primary-900);
-    width: 80%;
-    font-size: 20px;
-    padding-bottom: 0.5rem;
-    padding: 2rem;
-    font-weight: 600;
-    border: 5% 5% 5% 5%;
-    position: fixed;
-    z-index: 600;
+     position: absolute;
+     text-decoration: none;
+     top: -1rem;
+     background-color: var(--color-primary-900);
+     width: 80%;
+     font-size: 20px;
+     padding-bottom: 0.5rem;
+     padding: 2rem;
+     font-weight: 600;
+     border: 5% 5% 5% 5%;
+     position: fixed;
+     z-index: 600;
 }
 
 .featurereq svg {
-    position: relative;
-    top: 0.6rem;
+     position: relative;
+     top: 0.6rem;
 }
 
 .featurereq a {
-    text-decoration: none;
+     text-decoration: none;
 }
 .EditContainer,
 .cont.my {
-    z-index: 2900;
-    height: 100%;
+     z-index: 2900;
+     height: 100%;
 }
 
 .cont.my .infoCont {
-    position: relative;
-    top: -10rem;
+     position: relative;
+     top: -10rem;
 }
 .bioView {
-    width: 54rem;
+     width: 54rem;
 }
 
 .statsCont span {
-    color: rgb(136, 135, 135);
-    font-weight: bold;
+     color: rgb(136, 135, 135);
+     font-weight: bold;
 }
 .mediaContainer {
-    display: flex;
-    justify-content: flex-end;
+     display: flex;
+     justify-content: flex-end;
 }
 .mediaCont {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    margin-right: 3rem;
+     position: absolute;
+     display: flex;
+     flex-direction: column;
+     margin-right: 3rem;
 
-    margin-top: 2rem;
-    justify-content: flex-end;
-    z-index: 150;
+     margin-top: 2rem;
+     justify-content: flex-end;
+     z-index: 150;
 }
 
 .noneview {
-    display: none;
+     display: none;
 }
 .reps {
-    display: flex;
-    justify-content: center;
+     display: flex;
+     justify-content: center;
 }
 
-/* Player rep styling based on console */
 .repCont {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    top: 6rem;
-    width: 100px;
-    padding: 2rem;
-    border-radius: 50%;
-    height: 100px;
+     display: flex;
+     justify-content: center;
+     position: relative;
+     top: 6rem;
+     width: 100px;
+     padding: 2rem;
+     border-radius: 50%;
+     height: 100px;
 }
 .repCont.XBOX.ONEs {
-    background: rgb(0, 197, 76);
+     background: rgb(0, 197, 76);
 }
 .repCont.XBOX.SERIESs {
-    background: rgb(0, 197, 76);
+     background: rgb(0, 197, 76);
 }
 .repCont.PS5s {
-    background: rgb(0, 128, 255);
+     background: rgb(0, 128, 255);
 }
 
 .repCont.PS4s {
-    background: rgb(0, 128, 255);
+     background: rgb(0, 128, 255);
 }
-/* end */
 
 .gameCont {
-    position: relative;
-    bottom: 12rem;
-    right: 0rem;
-    font-size: 1.2rem;
-    margin: 2rem;
+     position: relative;
+     bottom: 12rem;
+     right: 0rem;
+     font-size: 1.2rem;
+     margin: 2rem;
+}
+.statsCont p {
+     margin-top: 1rem;
 }
 
 .statsCont {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+     display: none;
+     justify-content: center;
+     flex-wrap: wrap;
+     flex-direction: column;
+     margin-bottom: 2rem;
+}
+.col {
+     display: flex;
+     justify-content: center;
+     position: relative;
+     left: 2rem;
 }
 
-/* sus */
 @media (min-width: 1400px) {
-    .statsCont span {
-        color: rgb(136, 135, 135);
-        margin: 3rem;
-        font-weight: bold;
-    }
+     .statsCont span {
+          color: rgb(136, 135, 135);
+          margin: 3rem;
+          font-weight: bold;
+     }
 }
 
 .rangeContainer {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
 }
 .rangeContainer p {
-    color: rgb(160, 160, 160);
-    font-weight: bolder;
+     color: rgb(160, 160, 160);
+     font-weight: bolder;
 }
 
 .range {
-    width: 12rem;
-    margin: 0.4rem;
-    overflow: hidden;
-    margin: 0;
+     width: 12rem;
+     margin: 0.4rem;
+     overflow: hidden;
+     margin: 0;
 }
-
-/* winpercentage and overall slider range */
-
 .range::-webkit-slider-thumb {
-    --webkit-appearance: none;
-    width: 15px;
-    margin: 0;
-    height: 15px;
-    background-color: rgb(0, 255, 149);
-    cursor: pointer;
-    box-shadow: -407px 0 0 400px rgb(0, 255, 136);
+     --webkit-appearance: none;
+     width: 15px;
+     margin: 0;
+     height: 15px;
+     background-color: rgb(0, 255, 149);
+     cursor: pointer;
+     box-shadow: -407px 0 0 400px rgb(0, 255, 136);
 }
 
 #rangeValue {
-    position: relative;
-    display: block;
-    text-align: center;
-    font-size: 6em;
-    color: rgb(255, 255, 255);
-    font-weight: 400;
+     position: relative;
+     display: block;
+     text-align: center;
+     font-size: 6em;
+     color: rgb(255, 255, 255);
+     font-weight: 400;
 }
 
 .range {
-    -webkit-appearance: none;
-    width: 100px;
-    border-radius: 20px 20px 20px 20px;
-    padding: 5px;
+     -webkit-appearance: none;
+     width: 100px;
+     border-radius: 20px 20px 20px 20px;
+     padding: 5px;
 
-    height: 10px;
-    outline: none;
-    background-color: rgb(255, 255, 255);
+     height: 10px;
+     outline: none;
+     background-color: rgb(255, 255, 255);
 }
 
 .range::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 25px;
-    height: 25px;
-    cursor: pointer;
+     -webkit-appearance: none;
+     appearance: none;
+     width: 25px;
+     height: 25px;
+     cursor: pointer;
 }
 
 .EditContainer .range {
-    padding: 10px;
-    color: white;
+     padding: 10px;
+     color: white;
 }
 .EditContainer .range::-webkit-slider-thumb {
-    --webkit-appearance: none;
-    width: 15px;
-    height: 15px;
-    background-color: rgb(255, 72, 0);
-    cursor: pointer;
-    box-shadow: -407px 0 0 400px rgb(0, 255, 149);
+     --webkit-appearance: none;
+     width: 15px;
+     height: 15px;
+     background-color: rgb(255, 72, 0);
+     cursor: pointer;
+     box-shadow: -407px 0 0 400px rgb(0, 255, 149);
 }
 
 .bioCont {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    top: 4rem;
+     display: flex;
+     justify-content: center;
+     position: relative;
+     top: 4rem;
 }
-
-/* bio view based on console */
 
 .bioView.XBOX.ONEs {
-    border: 3px solid rgb(0, 197, 76);
+     border: 3px solid rgb(0, 197, 76);
 }
 .bioView.XBOX.SERIESs {
-    border: 3px solid rgb(0, 197, 76);
+     border: 3px solid rgb(0, 197, 76);
 }
 .bioView.PS5s {
-    border: 3px solid rgb(0, 128, 255);
+     border: 3px solid rgb(0, 128, 255);
 }
 .bioView.PS4s {
-    border: 3px solid rgb(0, 128, 255);
+     border: 3px solid rgb(0, 128, 255);
 }
 
 .bioView {
-    height: 14rem;
-    width: 90%;
-    padding: 10px;
-    border-radius: 5%;
+     height: 14rem;
+     width: 90%;
+     padding: 10px;
+     border-radius: 5%;
+     background-color: var(--color-primary-900);
 }
 
 .bioView p {
-    font-family: 'Poppins', sans-serif;
-    line-height: 2;
-    background-color: var(--color-primary-800);
-    height: 100%;
-    padding: 2px;
-    border-radius: 5%;
-    position: relative;
-    bottom: 1.2rem;
+     font-family: 'Poppins', sans-serif;
+     line-height: 2;
+     background-color: var(--color-primary-900);
+     height: 100%;
+     padding: 2px;
+     border-radius: 5%;
+     position: relative;
+     bottom: 1.2rem;
 }
 
 @media (min-width: 1300px) {
-    .cont.my .infoCont {
-        position: relative;
-        top: 0rem;
-    }
-    .infoCont {
-        background-color: var(--color-primary-800);
-        margin: 0;
-        margin-left: 2rem;
-        margin-top: 10rem;
-        width: 38rem;
-        padding-bottom: 13rem;
-        top: 10rem;
-        height: 50rem;
-        border-radius: 5% 5% 5% 5%;
-    }
+     .cont.my .infoCont {
+          position: relative;
+          top: 0rem;
+     }
+     .infoCont {
+          background-color: var(--color-primary-800);
+          margin: 0;
+          margin-left: 2rem;
+          margin-top: 10rem;
+          width: 38rem;
+          top: 10rem;
+          border-radius: 5% 5% 5% 5%;
+     }
 }
 
 :root {
-    --color-button-text: #fff;
-    --color-primary-100: #151b22;
-    --color-primary-200: #b2bdcd;
-    --color-primary-300: #5d7290;
-    --color-primary-600: #323d4d;
-    --color-primary-700: #242c37;
-    --color-primary-800: #151a21;
-    --color-primary-900: #0b0e11;
-    --color-secondary-washed-out: #879eed;
-    --color-secondary: #5575e7;
-    --color-accent-glow: rgba(253, 77, 77, 0.3);
-    --color-accent: rgb(0, 255, 119);
-    --color-accent-hover: #fd6868;
-    --color-accent-disabled: #f5bfbf;
+     --color-button-text: #fff;
+     --color-primary-100: #151b22;
+     --color-primary-200: #b2bdcd;
+     --color-primary-300: #5d7290;
+     --color-primary-600: #323d4d;
+     --color-primary-700: #242c37;
+     --color-primary-800: #151a21;
+     --color-primary-900: #0b0e11;
+     --color-secondary-washed-out: #879eed;
+     --color-secondary: #5575e7;
+     --color-accent-glow: rgba(253, 77, 77, 0.3);
+     --color-accent: rgb(0, 255, 119);
+     --color-accent-hover: #fd6868;
+     --color-accent-disabled: #f5bfbf;
 }
 .XBOX.SERIES {
-    background-image: url('../public/xboxseries.png');
-    height: 3rem;
-    background-repeat: no-repeat;
-    border-radius: 10px;
-    background-color: rgb(0, 255, 119);
-    width: 100%;
+     background-image: url('../public/xboxseries.png');
+     height: 3rem;
+     background-repeat: no-repeat;
+     border-radius: 10px;
+     background-color: rgb(0, 255, 119);
+     width: 100%;
 }
 
 .XBOX.ONE {
-    background-image: url('../public/XBOXONE.png');
-    height: 3rem;
-    background-repeat: no-repeat;
-    border-radius: 10px;
-    background-color: rgb(0, 255, 119);
-    width: 100%;
+     background-image: url('../public/XBOXONE.png');
+     height: 3rem;
+     background-repeat: no-repeat;
+     border-radius: 10px;
+     background-color: rgb(0, 255, 119);
+     width: 100%;
 }
 
 .PS5 {
-    background-image: url('../public/PS5.png');
-    height: 3rem;
-    background-repeat: no-repeat;
-    border-radius: 10px;
-    background-color: rgb(0, 128, 255);
-    width: 100%;
+     background-image: url('../public/PS5.png');
+     height: 3rem;
+     background-repeat: no-repeat;
+     border-radius: 10px;
+     background-color: rgb(0, 128, 255);
+     width: 100%;
 }
 
 .PS4 {
-    background-image: url('../public/PS4.png');
-    height: 3rem;
-    background-repeat: no-repeat;
-    border-radius: 10px;
-    background-color: rgb(0, 128, 255);
-    width: 100%;
+     background-image: url('../public/PS4.png');
+     height: 3rem;
+     background-repeat: no-repeat;
+     border-radius: 10px;
+     background-color: rgb(0, 128, 255);
+     width: 100%;
 }
 
 .icon-tabler-brand-youtube {
-    fill: red;
-    stroke: rgb(20, 20, 20);
-    margin: 0.5rem;
-    position: relative;
-    bottom: 0rem;
+     fill: red;
+     stroke: rgb(20, 20, 20);
+     margin: 0.5rem;
+     position: relative;
+     bottom: 0rem;
 }
 .icon-tabler-brand-instagram {
-    fill: rgb(255, 196, 0);
-    stroke: rgb(20, 20, 20);
-    margin: 0.5rem;
-    position: relative;
-    bottom: 0rem;
+     fill: rgb(255, 196, 0);
+     stroke: rgb(20, 20, 20);
+     margin: 0.5rem;
+     position: relative;
+     bottom: 0rem;
 }
 .icon-tabler-brand-twitter {
-    fill: rgb(0, 140, 255);
-    stroke: rgb(20, 20, 20);
-    margin: 0.5rem;
-    position: relative;
+     fill: rgb(0, 140, 255);
+     stroke: rgb(20, 20, 20);
+     margin: 0.5rem;
+     position: relative;
 }
 .icon-tabler-brand-twitch {
-    fill: rgb(132, 0, 255);
-    stroke: rgb(20, 20, 20);
-    margin: 0.5rem;
-    position: relative;
+     fill: rgb(132, 0, 255);
+     stroke: rgb(20, 20, 20);
+     margin: 0.5rem;
+     position: relative;
+}
+
+.searchCont {
+     z-index: 1111222;
+     position: fixed;
+     display: flex;
+     flex-direction: column;
+     top: 26rem;
+     left: 4rem;
+}
+.playerProfiles {
+     width: 90px;
+     height: 90px;
+     background: var(--color-primary-200);
+     border-radius: 20%;
+     position: relative;
+     left: 16rem;
+     top: 1rem;
+     text-align: center;
+     margin-bottom: 2rem;
+}
+.cols {
+     display: flex;
+     flex-direction: column;
+}
+.search {
+     background: var(--color-primary-800);
+     padding: 0.1rem;
+     margin-top: 1.5rem;
+     width: 80%;
+     color: white;
+}
+.searchCont svg {
+     position: relative;
+     bottom: 1.5rem;
+     right: 2rem;
 }

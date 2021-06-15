@@ -9,8 +9,8 @@ export class User extends Document {
   email: string;
   @Prop({ type: String, required: true })
   password: string;
-  @Prop({tpye:String,required:true,default:"none"})
-  profileImage:string
+  @Prop({ tpye: String, required: true, default: 'none' })
+  profileImage: string;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);
