@@ -303,11 +303,12 @@ input:active {
 }
 
 ::-webkit-scrollbar {
-     width: 4px;
+     width: 9px;
+     border-radius: 20px;
 }
 
 ::-webkit-scrollbar-track {
-     background: #000000;
+     background: #363636;
 }
 ::-webkit-scrollbar-thumb {
      background: rgba(0, 255, 98, 0.849);
