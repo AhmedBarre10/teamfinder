@@ -7,38 +7,36 @@ import {
   Put,
   Delete,
   Req,
-} from '@nestjs/common';
+} from "@nestjs/common";
 
-import { PlayercardService } from './Playercard.service';
-import { Request } from '@nestjs/common';
+import { PlayercardService } from "./Playercard.service";
+import { Request } from "@nestjs/common";
 
-@Controller('playercards')
+@Controller("playercards")
 export class PlayercardController {
   constructor(private readonly playercardService: PlayercardService) {}
 
   @Post()
   async addPlayercard(
-    @Body('Archetype') Archetype: string,
-    @Body('Winpercentage') Winpercentage: string,
-    @Body('Overall') Overall: string,
-    @Body('Rep') Rep: string,
-    @Body('System') System: string,
-    @Body('Position') Position: string,
-    @Body('Type') Type: string,
-    @Body('Status') Status: string,
-    @Body('Gamertag') Gamertag: string,
-    @Body('Bio') Bio: string,
-    @Body('Twitter') Twitter: string,
-    @Body('Youtube') Youtube: string,
-    @Body('Instagram') Instagram: string,
-    @Body('Twitch') Twitch: string,
+    @Body("Archetype") Archetype: string,
+    @Body("Winpercentage") Winpercentage: string,
+    @Body("Overall") Overall: string,
+    @Body("Rep") Rep: string,
+    @Body("System") System: string,
+    @Body("Position") Position: string,
+    @Body("Type") Type: string,
+    @Body("Status") Status: string,
+    @Body("Gamertag") Gamertag: string,
+    @Body("Bio") Bio: string,
+    @Body("Twitter") Twitter: string,
+    @Body("Youtube") Youtube: string,
+    @Body("Instagram") Instagram: string,
+    @Body("Twitch") Twitch: string,
 
-    @Request() request,
+    @Request() request
   ) {
     const PlayerId = request.user.id;
-    console.log(PlayerId);
     if (PlayerId !== request.user.id) {
-      console.log('not user ');
       return null;
     }
 
@@ -57,30 +55,30 @@ export class PlayercardController {
       Youtube,
       Instagram,
       Twitch,
-      PlayerId,
+      PlayerId
     );
 
     return generatedId;
   }
 
-  @Put('/myplayers/:id')
+  @Put("/myplayers/:id")
   async updatePlayerCard(
-    @Body('Archetype') Archetype: string,
-    @Body('Winpercentage') Winpercentage: string,
-    @Body('Overall') Overall: string,
-    @Body('Rep') Rep: string,
-    @Body('System') System: string,
-    @Body('Position') Position: string,
-    @Body('Type') Type: string,
-    @Body('Status') Status: string,
-    @Body('Gamertag') Gamertag: string,
-    @Body('Bio') Bio: string,
-    @Body('Twitter') Twitter: string,
-    @Body('Youtube') Youtube: string,
-    @Body('Instagram') Instagram: string,
-    @Body('Twitch') Twitch: string,
-    @Param('id') id: string,
-    @Request() request,
+    @Body("Archetype") Archetype: string,
+    @Body("Winpercentage") Winpercentage: string,
+    @Body("Overall") Overall: string,
+    @Body("Rep") Rep: string,
+    @Body("System") System: string,
+    @Body("Position") Position: string,
+    @Body("Type") Type: string,
+    @Body("Status") Status: string,
+    @Body("Gamertag") Gamertag: string,
+    @Body("Bio") Bio: string,
+    @Body("Twitter") Twitter: string,
+    @Body("Youtube") Youtube: string,
+    @Body("Instagram") Instagram: string,
+    @Body("Twitch") Twitch: string,
+    @Param("id") id: string,
+    @Request() request
   ) {
     const PlayerId = request.user.id;
 
@@ -100,7 +98,7 @@ export class PlayercardController {
       Instagram,
       Twitch,
       PlayerId,
-      id,
+      id
     );
   }
 
@@ -114,22 +112,22 @@ export class PlayercardController {
   // async testPost(@Request() request) {
   //   console.log(request.user);
   // }
-  @Get('findbyid/:id')
-  async getById(@Param('id') infoId: string) {
+  @Get("findbyid/:id")
+  async getById(@Param("id") infoId: string) {
     const Info = await this.playercardService.findByPlayerById(infoId);
     return Info;
   }
 
-  @Get('playerId/:id')
-  async getByPlayerId(@Param('id') id: string) {
+  @Get("playerId/:id")
+  async getByPlayerId(@Param("id") id: string) {
     return this.playercardService.findPlayerCard(id);
   }
 
-  @Delete('/myplayers/:id')
-  async deletePlayerCard(@Param('id') id: string) {
+  @Delete("/myplayers/:id")
+  async deletePlayerCard(@Param("id") id: string) {
     this.playercardService.delete(id);
   }
-  @Get('/myplayers')
+  @Get("/myplayers")
   async getMe(@Request() request) {
     const player = request.user.id;
     return this.playercardService.findMe(player);

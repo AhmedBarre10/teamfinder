@@ -39,7 +39,6 @@ export class ThreadServices {
       body,
       user,
     });
-    console.log(newThread.user);
 
     const thread = await newThread.save();
     return thread;
@@ -60,9 +59,7 @@ export class ThreadServices {
 
     const myPost = await this.ThreadModel.find(
       { "user.id": tagTexts },
-      function (err, obj) {
-        console.log(obj);
-      }
+      function (err, obj) {}
     );
 
     // const myPost = await this.ThreadModel.find({

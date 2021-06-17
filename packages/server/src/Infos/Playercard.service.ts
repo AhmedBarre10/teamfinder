@@ -4,18 +4,18 @@ import {
   Inject,
   Scope,
   Req,
-} from '@nestjs/common';
-import { InjectModel } from '@nestjs/mongoose';
-import { Model } from 'mongoose';
-import { Playercards } from './Playercard.schemas';
-import { Request } from '@nestjs/common';
-import { ConditionFunc } from 'rxjs/internal/observable/generate';
+} from "@nestjs/common";
+import { InjectModel } from "@nestjs/mongoose";
+import { Model } from "mongoose";
+import { Playercards } from "./Playercard.schemas";
+import { Request } from "@nestjs/common";
+import { ConditionFunc } from "rxjs/internal/observable/generate";
 
 @Injectable({ scope: Scope.REQUEST })
 export class PlayercardService {
   constructor(
-    @InjectModel('Playercards')
-    private readonly PlayercardModel: Model<Playercards>,
+    @InjectModel("Playercards")
+    private readonly PlayercardModel: Model<Playercards>
   ) {}
 
   async insertInfo(
@@ -33,7 +33,7 @@ export class PlayercardService {
     Youtube: string,
     Instagram: string,
     Twitch: string,
-    PlayerId: String,
+    PlayerId: String
   ) {
     try {
       const newPlayercard = new this.PlayercardModel({
@@ -85,7 +85,7 @@ export class PlayercardService {
     Instagram: string,
     Twitch: string,
     PlayerId: String,
-    id: string,
+    id: string
   ) {
     const newPlayercard = new this.PlayercardModel({
       Archetype,
@@ -139,9 +139,7 @@ export class PlayercardService {
     try {
       const player = await this.PlayercardModel.findById(id);
       return player;
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   }
 
   async delete(id) {
