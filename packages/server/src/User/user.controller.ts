@@ -74,6 +74,7 @@ export class UserController {
   @Put("upload")
   async create(@Req() request, @Res() response) {
     try {
+      console.log("upload");
       await this.userService.fileupload(request, response);
     } catch (error) {
       return response

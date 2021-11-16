@@ -1,27 +1,18 @@
-import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document, Types, Schema as MongooseSchema } from 'mongoose';
+import {
+  Prop,
+  Schema as SchemaAnnotation,
+  SchemaFactory,
+} from "@nestjs/mongoose";
+import { Document, Types, Schema } from "mongoose";
 
-@Schema()
+@SchemaAnnotation()
 export class Thread extends Document {
-  @Prop({ type: String, required: true })
-  title: string;
-  @Prop({ type: String, required: true })
-  body: string;
-  @Prop({ type: Object, required: true })
-  user: {
-    name: string;
-    profileImage: string;
-    id: string;
-  };
-
-  @Prop({ type: String, required: true })
-  image: string;
-
-  @Prop({ type: Array })
-  comments: [];
-
-  @Prop({ type: MongooseSchema.Types.ObjectId, ref: 'User' })
-  author: MongooseSchema.Types.ObjectId;
+  @Prop({ type: Schema.Types.ObjectId, ref: "User", required: true })
+  sender: Schema.Types.ObjectId;
+  @Prop({ type: String })
+  msg: { type: string; required: true };
+  @Prop({ type: Date })
+  date: { type: Date };
 }
 
 export const ThreadSchema = SchemaFactory.createForClass(Thread);

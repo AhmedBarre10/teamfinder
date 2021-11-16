@@ -19,39 +19,93 @@ export class PlayercardService {
   ) {}
 
   async insertInfo(
-    Archetype: string,
-    Overall: string,
-    Winpercentage: string,
-    Rep: string,
-    System: string,
-    Type: string,
-    Position: string,
-    Status: string,
-    Gamertag: string,
-    Bio: string,
-    Twitter: string,
-    Youtube: string,
-    Instagram: string,
-    Twitch: string,
-    PlayerId: String
+    date: string,
+    Team1: [
+      Name: string,
+      Logo: string,
+      id: string,
+      first: {
+        name: string;
+        points: string;
+        assist: string;
+        blocks: string;
+        steals: string;
+        rebounds: string;
+        FG: string;
+        TPT: string;
+        id: string;
+      },
+      second: {
+        name: string;
+        Logo: string;
+        points: string;
+        assist: string;
+        blocks: string;
+        steals: string;
+        rebounds: string;
+        FG: string;
+        TPT: string;
+        id: string;
+      },
+      third: {
+        name: string;
+        Logo: string;
+        points: string;
+        assist: string;
+        blocks: string;
+        steals: string;
+        rebounds: string;
+        FG: string;
+        TPT: string;
+        id: string;
+      }
+    ],
+    Team2: [
+      Name: string,
+      Logo: string,
+      id: string,
+      first: {
+        name: string;
+        points: string;
+        assist: string;
+        blocks: string;
+        steals: string;
+        rebounds: string;
+        FG: string;
+        TPT: string;
+        id: string;
+      },
+      second: {
+        name: string;
+        Logo: string;
+        points: string;
+        assist: string;
+        blocks: string;
+        steals: string;
+        rebounds: string;
+        FG: string;
+        TPT: string;
+        id: string;
+      },
+      third: {
+        name: string;
+        Logo: string;
+        points: string;
+        assist: string;
+        blocks: string;
+        steals: string;
+        rebounds: string;
+        FG: string;
+        TPT: string;
+        id: string;
+      }
+    ]
   ) {
     try {
       const newPlayercard = new this.PlayercardModel({
-        Archetype,
-        Overall,
-        Winpercentage,
-        Rep,
-        System,
-        Type,
-        Position,
-        Status,
-        Gamertag,
-        Bio,
-        Twitter,
-        Youtube,
-        Instagram,
-        Twitch,
-        PlayerId,
+        date,
+        Team1,
+        Team2,
       });
       const result = await newPlayercard.save();
       return result;
@@ -70,96 +124,149 @@ export class PlayercardService {
   }
 
   async updatePlayerCard(
-    Archetype: string,
-    Overall: string,
-    Winpercentage: string,
-    Rep: string,
-    System: string,
-    Type: string,
-    Position: string,
-    Status: string,
-    Gamertag: string,
-    Bio: string,
-    Twitter: string,
-    Youtube: string,
-    Instagram: string,
-    Twitch: string,
-    PlayerId: String,
-    id: string
+    date: string,
+    Team1: [
+      Name: string,
+      Logo: string,
+      id: string,
+      first: {
+        name: string;
+        points: string;
+        assist: string;
+        blocks: string;
+        steals: string;
+        rebounds: string;
+        FG: string;
+        TPT: string;
+        id: string;
+      },
+      second: {
+        name: string;
+        Logo: string;
+        points: string;
+        assist: string;
+        blocks: string;
+        steals: string;
+        rebounds: string;
+        FG: string;
+        TPT: string;
+        id: string;
+      },
+      third: {
+        name: string;
+        Logo: string;
+        points: string;
+        assist: string;
+        blocks: string;
+        steals: string;
+        rebounds: string;
+        FG: string;
+        TPT: string;
+        id: string;
+      }
+    ],
+    Team2: [
+      Name: string,
+      Logo: string,
+      id: string,
+      first: {
+        name: string;
+        points: string;
+        assist: string;
+        blocks: string;
+        steals: string;
+        rebounds: string;
+        FG: string;
+        TPT: string;
+        id: string;
+      },
+      second: {
+        name: string;
+        Logo: string;
+        points: string;
+        assist: string;
+        blocks: string;
+        steals: string;
+        rebounds: string;
+        FG: string;
+        TPT: string;
+        id: string;
+      },
+      third: {
+        name: string;
+        Logo: string;
+        points: string;
+        assist: string;
+        blocks: string;
+        steals: string;
+        rebounds: string;
+        FG: string;
+        TPT: string;
+        id: string;
+      }
+    ]
   ) {
     const newPlayercard = new this.PlayercardModel({
-      Archetype,
-      Overall,
-      Winpercentage,
-      Rep,
-      System,
-      Type,
-      Position,
-      Status,
-      Gamertag,
-      Bio,
-      Twitter,
-      Youtube,
-      Instagram,
-      Twitch,
-      PlayerId,
+      date,
+      Team1,
+      Team2,
     });
+    // const id = "6192e8e8393c6cceb94e245a";
+    // let oldPlayerCards = await this.PlayercardModel.findById(id);
+    // console.log(oldPlayerCards);
+    // const j = oldPlayerCards.Games;
+    // const s = newPlayercard.Games;
 
-    let oldPlayerCards = await this.PlayercardModel.findById(id);
-    oldPlayerCards.Bio = newPlayercard.Bio;
-    oldPlayerCards.Archetype = newPlayercard.Archetype;
-    oldPlayerCards.Overall = newPlayercard.Overall;
-    oldPlayerCards.Winpercentage = newPlayercard.Winpercentage;
-    oldPlayerCards.Rep = newPlayercard.Rep;
-    oldPlayerCards.System = newPlayercard.System;
-    oldPlayerCards.Position = newPlayercard.Position;
-    oldPlayerCards.Gamertag = newPlayercard.Gamertag;
-    oldPlayerCards.Twitter = newPlayercard.Twitter;
-    oldPlayerCards.Instagram = newPlayercard.Instagram;
-    oldPlayerCards.Twitch = newPlayercard.Twitch;
-    oldPlayerCards.PlayerId = newPlayercard.PlayerId;
+    // const ob = {
+    //   j,
+    //   s,
+    // };
+    // oldPlayerCards.Name = newPlayercard.Name;
+    // oldPlayerCards.Logo = newPlayercard.Logo;
+    // oldPlayerCards.Games = newPlayercard.Games;
+    // oldPlayerCards.Roster = newPlayercard.Roster;
 
-    const result = await oldPlayerCards.save();
-    return result;
+    // const result = await oldPlayerCards.save();
+    // return result;
   }
 
-  async findPlayerCard(id: string): Promise<Playercards> {
-    let Info;
-    try {
-      Info = await this.PlayercardModel.find({
-        PlayerId: id,
-      }).exec();
-      return Info;
-    } catch (error) {
-      throw new NotFoundException(error);
-    }
-  }
+  // async findPlayerCard(id: string): Promise<Playercards> {
+  //   let Info;
+  //   try {
+  //     Info = await this.PlayercardModel.find({
+  //       PlayerId: id,
+  //     }).exec();
+  //     return Info;
+  //   } catch (error) {
+  //     throw new NotFoundException(error);
+  //   }
+  // }
 
-  async findByPlayerById(id) {
-    try {
-      const player = await this.PlayercardModel.findById(id);
-      return player;
-    } catch (error) {}
-  }
+  // async findByPlayerById(id) {
+  //   try {
+  //     const player = await this.PlayercardModel.findById(id);
+  //     return player;
+  //   } catch (error) {}
+  // }
 
-  async delete(id) {
-    try {
-      const Player = await this.PlayercardModel.findById(id);
-      return Player.deleteOne();
-    } catch (error) {
-      return error;
-    }
-  }
+  // async delete(id) {
+  //   try {
+  //     const Player = await this.PlayercardModel.findById(id);
+  //     return Player.deleteOne();
+  //   } catch (error) {
+  //     return error;
+  //   }
+  // }
 
-  async findMe(id) {
-    let Info;
-    try {
-      Info = await this.PlayercardModel.find({
-        PlayerId: id,
-      }).exec();
-      return Info;
-    } catch (error) {
-      throw new NotFoundException(error);
-    }
-  }
+  // async findMe(id) {
+  //   let Info;
+  //   try {
+  //     Info = await this.PlayercardModel.find({
+  //       PlayerId: id,
+  //     }).exec();
+  //     return Info;
+  //   } catch (error) {
+  //     throw new NotFoundException(error);
+  //   }
+  // }
 }

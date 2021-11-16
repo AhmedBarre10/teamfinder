@@ -62,8 +62,8 @@ export class UserService {
     return user;
   }
   async signup(
-    @Body("name") name: string,
     @Body("email") email: string,
+    @Body("name") name: string,
     @Body("password") password: string
   ) {
     try {
@@ -74,9 +74,9 @@ export class UserService {
       }
 
       user = new this.UserModel({
-        name,
-        email,
-        password,
+        name: name,
+        email: email,
+        password: password,
       });
 
       const salt = await bcrypt.genSalt(10);
@@ -91,7 +91,7 @@ export class UserService {
         },
       };
 
-      return this.jwt.sign(payload);
+      return { token: this.jwt.sign(payload), userInfo: user };
     } catch (err) {
       return err;
     }
@@ -117,8 +117,8 @@ export class UserService {
     try {
       const user = await this.UserModel.findById(req.user.id);
       AWS.config.update({
-        accessKeyId: "AKIASWPEYLNB5JQETP7L",
-        secretAccessKey: "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",
+        accessKeyId: "AKIASWPEYLNB5Z7XWOP6",
+        secretAccessKey: "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",
       });
 
       let update = multer({
@@ -135,11 +135,13 @@ export class UserService {
           },
         }),
       }).array("upload", 1);
+      console.log("updating");
 
       update(req, res, function (error) {
         if (error) {
           return res.status(404).json(`Failed to upload image file: ${error}`);
         }
+        console.log(req.files[0].location);
         return res.status(201).json(req.files[0].location);
       });
     } catch (error) {
@@ -148,6 +150,10 @@ export class UserService {
   }
 
   async getFileStream(fileKey: string) {
+    AWS.config.update({
+      accessKeyId: "AKIASWPEYLNB5Z7XWOP6",
+      secretAccessKey: "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",
+    });
     const s3 = new AWS.S3();
     if (fileKey === "none") {
       fileKey = fileKey + ".png";
@@ -156,7 +162,8 @@ export class UserService {
       Key: fileKey,
       Bucket: "teamfinderphotos",
     };
-
+    // console.log("tried to get image");
+    // console.log(s3.getObject(downloadParams).createReadStream());
     return s3.getObject(downloadParams).createReadStream();
   }
 

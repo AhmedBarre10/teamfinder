@@ -18,88 +18,200 @@ export class PlayercardController {
 
   @Post()
   async addPlayercard(
-    @Body("Archetype") Archetype: string,
-    @Body("Winpercentage") Winpercentage: string,
-    @Body("Overall") Overall: string,
-    @Body("Rep") Rep: string,
-    @Body("System") System: string,
-    @Body("Position") Position: string,
-    @Body("Type") Type: string,
-    @Body("Status") Status: string,
-    @Body("Gamertag") Gamertag: string,
-    @Body("Bio") Bio: string,
-    @Body("Twitter") Twitter: string,
-    @Body("Youtube") Youtube: string,
-    @Body("Instagram") Instagram: string,
-    @Body("Twitch") Twitch: string,
+    @Body("date")
+    date: string,
+
+    @Body("Team1")
+    Team1: [
+      Name: string,
+      Logo: string,
+      id: string,
+      first: {
+        name: string;
+        points: string;
+        assist: string;
+        blocks: string;
+        steals: string;
+        rebounds: string;
+        FG: string;
+        TPT: string;
+        id: string;
+      },
+      second: {
+        name: string;
+        Logo: string;
+        points: string;
+        assist: string;
+        blocks: string;
+        steals: string;
+        rebounds: string;
+        FG: string;
+        TPT: string;
+        id: string;
+      },
+      third: {
+        name: string;
+        Logo: string;
+        points: string;
+        assist: string;
+        blocks: string;
+        steals: string;
+        rebounds: string;
+        FG: string;
+        TPT: string;
+        id: string;
+      }
+    ],
+
+    @Body("Team2")
+    Team2: [
+      Name: string,
+      Logo: string,
+      id: string,
+      first: {
+        name: string;
+        points: string;
+        assist: string;
+        blocks: string;
+        steals: string;
+        rebounds: string;
+        FG: string;
+        TPT: string;
+        id: string;
+      },
+      second: {
+        name: string;
+        Logo: string;
+        points: string;
+        assist: string;
+        blocks: string;
+        steals: string;
+        rebounds: string;
+        FG: string;
+        TPT: string;
+        id: string;
+      },
+      third: {
+        name: string;
+        Logo: string;
+        points: string;
+        assist: string;
+        blocks: string;
+        steals: string;
+        rebounds: string;
+        FG: string;
+        TPT: string;
+        id: string;
+      }
+    ],
 
     @Request() request
   ) {
-    const PlayerId = request.user.id;
-    if (PlayerId !== request.user.id) {
-      return null;
-    }
+    // const PlayerId = request.user.id;
+    // if (PlayerId !== request.user.id) {
+    //   return null;
+    // }
 
     const generatedId = await this.playercardService.insertInfo(
-      Archetype,
-      Overall,
-      Winpercentage,
-      Rep,
-      System,
-      Type,
-      Position,
-      Status,
-      Gamertag,
-      Bio,
-      Twitter,
-      Youtube,
-      Instagram,
-      Twitch,
-      PlayerId
+      date,
+      Team1,
+      Team2
     );
 
     return generatedId;
   }
 
-  @Put("/myplayers/:id")
+  @Put()
   async updatePlayerCard(
-    @Body("Archetype") Archetype: string,
-    @Body("Winpercentage") Winpercentage: string,
-    @Body("Overall") Overall: string,
-    @Body("Rep") Rep: string,
-    @Body("System") System: string,
-    @Body("Position") Position: string,
-    @Body("Type") Type: string,
-    @Body("Status") Status: string,
-    @Body("Gamertag") Gamertag: string,
-    @Body("Bio") Bio: string,
-    @Body("Twitter") Twitter: string,
-    @Body("Youtube") Youtube: string,
-    @Body("Instagram") Instagram: string,
-    @Body("Twitch") Twitch: string,
-    @Param("id") id: string,
+    @Body("date")
+    date: string,
+
+    @Body("Team1")
+    Team1: [
+      Name: string,
+      Logo: string,
+      id: string,
+      first: {
+        name: string;
+        points: string;
+        assist: string;
+        blocks: string;
+        steals: string;
+        rebounds: string;
+        FG: string;
+        TPT: string;
+        id: string;
+      },
+      second: {
+        name: string;
+        Logo: string;
+        points: string;
+        assist: string;
+        blocks: string;
+        steals: string;
+        rebounds: string;
+        FG: string;
+        TPT: string;
+        id: string;
+      },
+      third: {
+        name: string;
+        Logo: string;
+        points: string;
+        assist: string;
+        blocks: string;
+        steals: string;
+        rebounds: string;
+        FG: string;
+        TPT: string;
+        id: string;
+      }
+    ],
+
+    @Body("Team2")
+    Team2: [
+      Name: string,
+      Logo: string,
+      id: string,
+      first: {
+        name: string;
+        points: string;
+        assist: string;
+        blocks: string;
+        steals: string;
+        rebounds: string;
+        FG: string;
+        TPT: string;
+        id: string;
+      },
+      second: {
+        name: string;
+        Logo: string;
+        points: string;
+        assist: string;
+        blocks: string;
+        steals: string;
+        rebounds: string;
+        FG: string;
+        TPT: string;
+        id: string;
+      },
+      third: {
+        name: string;
+        Logo: string;
+        points: string;
+        assist: string;
+        blocks: string;
+        steals: string;
+        rebounds: string;
+        FG: string;
+        TPT: string;
+        id: string;
+      }
+    ],
     @Request() request
   ) {
-    const PlayerId = request.user.id;
-
-    return this.playercardService.updatePlayerCard(
-      Archetype,
-      Overall,
-      Winpercentage,
-      Rep,
-      System,
-      Type,
-      Position,
-      Status,
-      Gamertag,
-      Bio,
-      Twitter,
-      Youtube,
-      Instagram,
-      Twitch,
-      PlayerId,
-      id
-    );
+    return this.playercardService.updatePlayerCard(date, Team1, Team2);
   }
 
   @Get()
@@ -112,24 +224,24 @@ export class PlayercardController {
   // async testPost(@Request() request) {
   //   console.log(request.user);
   // }
-  @Get("findbyid/:id")
-  async getById(@Param("id") infoId: string) {
-    const Info = await this.playercardService.findByPlayerById(infoId);
-    return Info;
-  }
+  // @Get("findbyid/:id")
+  // async getById(@Param("id") infoId: string) {
+  //   const Info = await this.playercardService.findByPlayerById(infoId);
+  //   return Info;
+  // }
 
-  @Get("playerId/:id")
-  async getByPlayerId(@Param("id") id: string) {
-    return this.playercardService.findPlayerCard(id);
-  }
+  // @Get("playerId/:id")
+  // async getByPlayerId(@Param("id") id: string) {
+  //   return this.playercardService.findPlayerCard(id);
+  // }
 
-  @Delete("/myplayers/:id")
-  async deletePlayerCard(@Param("id") id: string) {
-    this.playercardService.delete(id);
-  }
-  @Get("/myplayers")
-  async getMe(@Request() request) {
-    const player = request.user.id;
-    return this.playercardService.findMe(player);
-  }
+  // @Delete("/myplayers/:id")
+  // async deletePlayerCard(@Param("id") id: string) {
+  //   this.playercardService.delete(id);
+  // }
+  // @Get("/myplayers")
+  // async getMe(@Request() request) {
+  //   const player = request.user.id;
+  //   return this.playercardService.findMe(player);
+  // }
 }
