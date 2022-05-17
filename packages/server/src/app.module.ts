@@ -24,7 +24,7 @@ import { ThreadModule } from "./Thread/thread.module";
     PlayercardModule,
     ThreadModule,
     MongooseModule.forRoot(
-      "mongodb+srv://ahmed123:ahmed123@cluster0.oyinh.mongodb.net/NBA2K?retryWrites=true&w=majority"
+      "env"
     ),
   ],
   controllers: [AppController],
